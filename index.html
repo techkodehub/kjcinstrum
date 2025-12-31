@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servicios Eléctricos Profesionales | [Nombre de la Empresa]</title>
+    <title>KJC INSTRUMENT C.A. | Soluciones Eléctricas e Instrumentación</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -14,11 +14,11 @@
         }
         
         :root {
-            --primary: #f9a826;
-            --secondary: #2c3e50;
-            --accent: #e74c3c;
+            --primary: #1a73e8;
+            --secondary: #0d47a1;
+            --accent: #ff6d00;
             --light: #f8f9fa;
-            --dark: #2c3e50;
+            --dark: #202124;
         }
         
         body {
@@ -28,14 +28,15 @@
         
         /* Header y Navegación */
         header {
-            background-color: var(--secondary);
-            color: white;
-            padding: 1rem 0;
+            background-color: white;
+            color: var(--dark);
+            padding: 0.8rem 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-bottom: 3px solid var(--primary);
         }
         
         .container {
@@ -51,14 +52,35 @@
             align-items: center;
         }
         
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary);
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
         
-        .logo span {
-            color: white;
+        .logo-img {
+            height: 60px;
+            width: auto;
+            max-width: 180px;
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .company-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--secondary);
+            line-height: 1.2;
+        }
+        
+        .company-tagline {
+            font-size: 0.85rem;
+            color: #666;
+            font-style: italic;
+            margin-top: 3px;
         }
         
         .nav-links {
@@ -67,43 +89,65 @@
         }
         
         .nav-links li {
-            margin-left: 2rem;
+            margin-left: 1.8rem;
         }
         
         .nav-links a {
-            color: white;
+            color: var(--dark);
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
+            font-size: 1rem;
             transition: color 0.3s;
+            padding: 5px 0;
+            position: relative;
         }
         
         .nav-links a:hover {
             color: var(--primary);
         }
         
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            left: 0;
+            bottom: 0;
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+        
         .mobile-menu-btn {
             display: none;
             background: none;
             border: none;
-            color: white;
+            color: var(--dark);
             font-size: 1.5rem;
             cursor: pointer;
         }
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
             background-size: cover;
             background-position: center;
             color: white;
             text-align: center;
             padding: 180px 0 100px;
-            margin-top: 70px;
+            margin-top: 90px;
         }
         
         .hero h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
+        }
+        
+        .hero h1 span {
+            color: var(--primary);
         }
         
         .hero p {
@@ -115,19 +159,23 @@
         .cta-button {
             display: inline-block;
             background-color: var(--primary);
-            color: var(--secondary);
-            padding: 12px 30px;
-            border-radius: 5px;
+            color: white;
+            padding: 14px 35px;
+            border-radius: 4px;
             text-decoration: none;
             font-weight: 600;
             font-size: 1.1rem;
             transition: all 0.3s;
             border: 2px solid var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         
         .cta-button:hover {
             background-color: transparent;
             color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
         
         /* Secciones generales */
@@ -176,15 +224,17 @@
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             transition: transform 0.3s;
+            border-top: 4px solid var(--primary);
         }
         
         .service-card:hover {
             transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
         }
         
         .service-icon {
             background-color: var(--secondary);
-            color: var(--primary);
+            color: white;
             height: 80px;
             display: flex;
             align-items: center;
@@ -213,6 +263,11 @@
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.08);
             position: relative;
+            transition: transform 0.3s;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
         }
         
         .project-img {
@@ -264,7 +319,7 @@
         .stat-number {
             font-size: 2.5rem;
             font-weight: 700;
-            color: var(--primary);
+            color: white;
         }
         
         /* Contacto */
@@ -288,7 +343,7 @@
         
         .contact-icon {
             background-color: var(--primary);
-            color: var(--secondary);
+            color: white;
             width: 50px;
             height: 50px;
             border-radius: 50%;
@@ -304,8 +359,16 @@
             padding: 15px;
             margin-bottom: 20px;
             border: 1px solid #ddd;
-            border-radius: 5px;
+            border-radius: 4px;
             font-size: 1rem;
+            transition: border 0.3s;
+        }
+        
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.2);
         }
         
         .contact-form textarea {
@@ -336,6 +399,7 @@
         .whatsapp-float:hover {
             background-color: #128C7E;
             transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
         }
         
         /* Footer */
@@ -352,11 +416,22 @@
             margin-bottom: 40px;
         }
         
+        .footer-logo-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
         .footer-logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 20px;
+            height: 50px;
+            width: auto;
+            max-width: 150px;
+        }
+        
+        .footer-tagline {
+            color: #aaa;
+            font-style: italic;
+            font-size: 0.9rem;
         }
         
         .social-links {
@@ -391,7 +466,27 @@
             color: #aaa;
         }
         
+        .rif-info {
+            background-color: var(--secondary);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        
         /* Responsive */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about-content {
+                gap: 30px;
+            }
+        }
+        
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -399,11 +494,12 @@
                 top: 100%;
                 left: 0;
                 width: 100%;
-                background-color: var(--secondary);
+                background-color: white;
                 flex-direction: column;
                 padding: 20px 0;
                 text-align: center;
                 box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+                border-top: 1px solid #eee;
             }
             
             .nav-links.active {
@@ -411,7 +507,7 @@
             }
             
             .nav-links li {
-                margin: 10px 0;
+                margin: 12px 0;
             }
             
             .mobile-menu-btn {
@@ -428,13 +524,33 @@
             
             .hero {
                 padding: 150px 0 80px;
+                margin-top: 80px;
+            }
+            
+            .logo-text {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .stats {
+                grid-template-columns: 1fr;
+                gap: 15px;
             }
         }
     </style>
 </head>
 <body>
     <!-- WhatsApp flotante -->
-    <a href="https://wa.me/5215512345678?text=Hola,%20estoy%20interesado%20en%20sus%20servicios%20eléctricos" 
+    <a href="https://wa.me/584141234567?text=Hola%20KJC%20INSTRUMENT,%20estoy%20interesado%20en%20sus%20servicios%20de%20instrumentación%20y%20soluciones%20eléctricas" 
        class="whatsapp-float" 
        target="_blank">
         <i class="fab fa-whatsapp"></i>
@@ -443,7 +559,14 @@
     <!-- Header y Navegación -->
     <header>
         <div class="container nav-container">
-            <div class="logo">Electro<span>Pro</span></div>
+            <div class="logo-container">
+                <!-- Logo de KJC INSTRUMENT C.A. -->
+                <img src="logo-kjc.jpg" alt="KJC INSTRUMENT C.A." class="logo-img">
+                <div class="logo-text">
+                    <div class="company-name">KJC INSTRUMENT C.A.</div>
+                    <div class="company-tagline">Dando un mundo de soluciones</div>
+                </div>
+            </div>
             <button class="mobile-menu-btn" id="mobileMenuBtn">
                 <i class="fas fa-bars"></i>
             </button>
@@ -460,9 +583,9 @@
     <!-- Sección Hero -->
     <section class="hero" id="inicio">
         <div class="container">
-            <h1>Soluciones Eléctricas Profesionales</h1>
-            <p>Más de 15 años de experiencia en instalaciones eléctricas residenciales, comerciales e industriales. Calidad, seguridad y garantía en cada proyecto.</p>
-            <a href="#contacto" class="cta-button">Solicitar Presupuesto Gratis</a>
+            <h1>Soluciones en <span>Instrumentación y Electricidad</span></h1>
+            <p>Especialistas en instalaciones eléctricas, instrumentación industrial, automatización y control. Más de 10 años brindando soluciones confiables a empresas en Venezuela.</p>
+            <a href="#contacto" class="cta-button">Solicitar Cotización</a>
         </div>
     </section>
 
@@ -479,16 +602,25 @@
                     </div>
                     <div class="service-content">
                         <h3>Instalaciones Eléctricas</h3>
-                        <p>Instalación completa de sistemas eléctricos para viviendas, edificios y locales comerciales.</p>
+                        <p>Instalaciones eléctricas industriales, comerciales y residenciales. Diseño, montaje y mantenimiento de sistemas de potencia.</p>
                     </div>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-tools"></i>
+                        <i class="fas fa-tachometer-alt"></i>
                     </div>
                     <div class="service-content">
-                        <h3>Mantenimiento y Reparaciones</h3>
-                        <p>Mantenimiento preventivo y correctivo de instalaciones eléctricas. Solución de fallas y problemas.</p>
+                        <h3>Instrumentación Industrial</h3>
+                        <p>Instalación y calibración de instrumentos de medición: presión, temperatura, flujo, nivel. Sistemas de control de procesos.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Automatización y Control</h3>
+                        <p>Sistemas de automatización industrial, PLC, SCADA, HMI. Integración de procesos productivos y control de máquinas.</p>
                     </div>
                 </div>
                 <div class="service-card">
@@ -496,35 +628,26 @@
                         <i class="fas fa-solar-panel"></i>
                     </div>
                     <div class="service-content">
-                        <h3>Sistemas de Energía Solar</h3>
-                        <p>Instalación de paneles solares para hogares y empresas. Ahorra en tu factura eléctrica.</p>
+                        <h3>Energías Alternativas</h3>
+                        <p>Sistemas de energía solar fotovoltaica, respaldo eléctrico con UPS y plantas eléctricas. Soluciones energéticas eficientes.</p>
                     </div>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-home"></i>
+                        <i class="fas fa-shield-alt"></i>
                     </div>
                     <div class="service-content">
-                        <h3>Automatización Residencial</h3>
-                        <p>Sistemas de domótica para control de iluminación, climatización y seguridad desde tu smartphone.</p>
+                        <h3>Sistemas de Protección</h3>
+                        <p>Sistemas de puesta a tierra, protección contra sobretensiones, coordinación de protecciones eléctricas y análisis de cortocircuito.</p>
                     </div>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-chart-line"></i>
+                        <i class="fas fa-hard-hat"></i>
                     </div>
                     <div class="service-content">
-                        <h3>Auditorías Eléctricas</h3>
-                        <p>Evaluación de instalaciones existentes para mejorar eficiencia, seguridad y cumplimiento normativo.</p>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-industry"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3>Proyectos Industriales</h3>
-                        <p>Instalaciones eléctricas para naves industriales, maquinaria y sistemas de producción.</p>
+                        <h3>Consultoría y Asesoría</h3>
+                        <p>Estudios de carga, análisis de factibilidad, diseños eléctricos, normativas y cumplimiento de estándares internacionales.</p>
                     </div>
                 </div>
             </div>
@@ -541,22 +664,22 @@
                 <div class="project-card">
                     <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
                     <div class="project-info">
-                        <h3>Instalación Comercial</h3>
-                        <p>Complejo de oficinas en zona financiera. Sistema eléctrico completo con respaldo de energía.</p>
+                        <h3>Planta Industrial</h3>
+                        <p>Instalación eléctrica completa y sistema de instrumentación para planta de procesamiento en Zona Industrial.</p>
                     </div>
                 </div>
                 <div class="project-card">
                     <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
                     <div class="project-info">
-                        <h3>Vivienda Residencial</h3>
-                        <p>Casa habitación de lujo con sistema de domótica integrado y paneles solares.</p>
+                        <h3>Centro Comercial</h3>
+                        <p>Sistema eléctrico y automatización para centro comercial, incluyendo iluminación eficiente y control de accesos.</p>
                     </div>
                 </div>
                 <div class="project-card">
                     <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
                     <div class="project-info">
-                        <h3>Nave Industrial</h3>
-                        <p>Instalación eléctrica para planta de manufactura con maquinaria especializada.</p>
+                        <h3>Sistema de Energía Solar</h3>
+                        <p>Instalación de sistema fotovoltaico de 50kW para empresa manufacturera, con respaldo y monitoreo remoto.</p>
                     </div>
                 </div>
             </div>
@@ -568,44 +691,51 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-text">
-                    <h2>Nuestra Historia</h2>
-                    <p>Con más de 15 años de experiencia en el sector eléctrico, nos hemos especializado en proporcionar soluciones integrales para proyectos residenciales, comerciales e industriales.</p>
-                    <p>Nuestro equipo de electricistas certificados combina conocimiento técnico con atención al detalle para garantizar la seguridad y eficiencia de cada instalación.</p>
-                    <p>Creemos en el trabajo honesto, la transparencia y la satisfacción total del cliente.</p>
+                    <h2>KJC INSTRUMENT C.A.</h2>
+                    <p>Somos una empresa venezolana especializada en soluciones integrales de instrumentación, electricidad y automatización industrial. Con más de una década de experiencia, nos hemos consolidado como aliados estratégicos de importantes empresas del sector industrial y comercial.</p>
+                    <p>Nuestro compromiso es proporcionar soluciones tecnológicas confiables, seguras y eficientes que optimicen los procesos productivos de nuestros clientes.</p>
+                    
+                    <div class="rif-info">
+                        <strong>RIF:</strong> J-29685693-1
+                    </div>
                     
                     <div class="stats">
                         <div class="stat-item">
-                            <div class="stat-number">15+</div>
+                            <div class="stat-number">10+</div>
                             <div>Años de Experiencia</div>
                         </div>
                         <div class="stat-item">
-                            <div class="stat-number">500+</div>
+                            <div class="stat-number">200+</div>
                             <div>Proyectos Completados</div>
                         </div>
                         <div class="stat-item">
-                            <div class="stat-number">100%</div>
+                            <div class="stat-number">50+</div>
                             <div>Clientes Satisfechos</div>
                         </div>
                     </div>
                 </div>
                 <div class="about-text">
-                    <h2>Nuestros Valores</h2>
+                    <h2>Nuestro Compromiso</h2>
                     <ul style="list-style: none; margin-top: 20px;">
                         <li style="margin-bottom: 15px; padding-left: 25px; position: relative;">
                             <i class="fas fa-check" style="color: var(--primary); position: absolute; left: 0;"></i>
-                            <strong>Seguridad:</strong> Cumplimiento de todas las normativas de seguridad eléctrica.
+                            <strong>Calidad Garantizada:</strong> Utilizamos materiales de primera y equipos certificados.
                         </li>
                         <li style="margin-bottom: 15px; padding-left: 25px; position: relative;">
                             <i class="fas fa-check" style="color: var(--primary); position: absolute; left: 0;"></i>
-                            <strong>Calidad:</strong> Uso de materiales de primera calidad y mano de obra especializada.
+                            <strong>Seguridad:</strong> Cumplimiento estricto de normas COVENIN y estándares internacionales.
                         </li>
                         <li style="margin-bottom: 15px; padding-left: 25px; position: relative;">
                             <i class="fas fa-check" style="color: var(--primary); position: absolute; left: 0;"></i>
-                            <strong>Puntualidad:</strong> Respetamos los plazos acordados con nuestros clientes.
+                            <strong>Puntualidad:</strong> Entregamos proyectos en los plazos acordados.
                         </li>
                         <li style="margin-bottom: 15px; padding-left: 25px; position: relative;">
                             <i class="fas fa-check" style="color: var(--primary); position: absolute; left: 0;"></i>
-                            <strong>Garantía:</strong> Todos nuestros trabajos cuentan con garantía por escrito.
+                            <strong>Soporte Técnico:</strong> Acompañamiento post-venta y mantenimiento preventivo.
+                        </li>
+                        <li style="margin-bottom: 15px; padding-left: 25px; position: relative;">
+                            <i class="fas fa-check" style="color: var(--primary); position: absolute; left: 0;"></i>
+                            <strong>Innovación:</strong> Implementamos las últimas tecnologías en instrumentación y control.
                         </li>
                     </ul>
                 </div>
@@ -621,15 +751,16 @@
             </div>
             <div class="contact-container">
                 <div class="contact-info">
-                    <h3 style="color: var(--secondary); margin-bottom: 20px;">Estamos listos para ayudarte</h3>
+                    <h3 style="color: var(--secondary); margin-bottom: 20px;">¿Necesitas soluciones en instrumentación o electricidad?</h3>
                     
                     <div class="contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-phone-alt"></i>
                         </div>
                         <div>
-                            <h4>Teléfono</h4>
-                            <p><a href="tel:+525512345678">+52 55 1234 5678</a></p>
+                            <h4>Teléfonos</h4>
+                            <p><a href="tel:+584141234567">+58 414 123 4567</a></p>
+                            <p><a href="tel:+582122345678">+58 212 234 5678</a></p>
                         </div>
                     </div>
                     
@@ -639,7 +770,8 @@
                         </div>
                         <div>
                             <h4>Email</h4>
-                            <p><a href="mailto:contacto@electropro.com">contacto@electropro.com</a></p>
+                            <p><a href="mailto:ventas@kjcinstrument.com">ventas@kjcinstrument.com</a></p>
+                            <p><a href="mailto:info@kjcinstrument.com">info@kjcinstrument.com</a></p>
                         </div>
                     </div>
                     
@@ -649,7 +781,8 @@
                         </div>
                         <div>
                             <h4>Ubicación</h4>
-                            <p>Ciudad de México, CDMX</p>
+                            <p>Caracas, Venezuela</p>
+                            <p style="font-size: 0.9rem; color: #666;">Servicios en todo el territorio nacional</p>
                         </div>
                     </div>
                     
@@ -659,19 +792,29 @@
                         </div>
                         <div>
                             <h4>Horarios</h4>
-                            <p>Lunes a Viernes: 8:00 AM - 6:00 PM</p>
-                            <p>Sábados: 9:00 AM - 2:00 PM</p>
+                            <p>Lunes a Viernes: 7:30 AM - 5:00 PM</p>
+                            <p>Sábados: 8:00 AM - 12:00 PM</p>
+                            <p style="font-size: 0.9rem; color: #666;">Servicio de emergencias 24/7</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="contact-form">
                     <form id="contactForm">
-                        <input type="text" placeholder="Nombre completo" required>
+                        <input type="text" placeholder="Nombre completo o razón social" required>
                         <input type="tel" placeholder="Teléfono" required>
-                        <input type="email" placeholder="Email" required>
+                        <input type="email" placeholder="Correo electrónico" required>
+                        <select style="width: 100%; padding: 15px; margin-bottom: 20px; border: 1px solid #ddd; border-radius: 4px; font-size: 1rem;">
+                            <option value="">Tipo de servicio requerido</option>
+                            <option value="electricidad">Instalaciones Eléctricas</option>
+                            <option value="instrumentacion">Instrumentación Industrial</option>
+                            <option value="automatizacion">Automatización y Control</option>
+                            <option value="energia">Energías Alternativas</option>
+                            <option value="mantenimiento">Mantenimiento</option>
+                            <option value="consultoria">Consultoría</option>
+                        </select>
                         <textarea placeholder="Describe tu proyecto o necesidad" required></textarea>
-                        <button type="submit" class="cta-button" style="width: 100%;">Enviar Mensaje</button>
+                        <button type="submit" class="cta-button" style="width: 100%;">Solicitar Cotización</button>
                     </form>
                 </div>
             </div>
@@ -683,12 +826,18 @@
         <div class="container">
             <div class="footer-content">
                 <div>
-                    <div class="footer-logo">ElectroPro</div>
-                    <p>Servicios eléctricos profesionales con calidad, seguridad y garantía.</p>
+                    <div class="footer-logo-container">
+                        <!-- Logo en el footer -->
+                        <img src="logo-kjc.jpg" alt="KJC INSTRUMENT C.A." class="footer-logo">
+                        <div class="footer-tagline">Dando un mundo de soluciones</div>
+                        <div class="rif-info" style="background-color: rgba(255,255,255,0.1);">RIF: J-29685693-1</div>
+                    </div>
+                    <p style="margin-top: 15px; color: #ccc;">Especialistas en instrumentación, electricidad y automatización industrial.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
                 
@@ -699,6 +848,7 @@
                         <li style="margin-bottom: 10px;"><a href="#servicios" style="color: #ccc; text-decoration: none;">Servicios</a></li>
                         <li style="margin-bottom: 10px;"><a href="#proyectos" style="color: #ccc; text-decoration: none;">Proyectos</a></li>
                         <li style="margin-bottom: 10px;"><a href="#nosotros" style="color: #ccc; text-decoration: none;">Nosotros</a></li>
+                        <li style="margin-bottom: 10px;"><a href="#contacto" style="color: #ccc; text-decoration: none;">Contacto</a></li>
                     </ul>
                 </div>
                 
@@ -706,15 +856,17 @@
                     <h4>Servicios</h4>
                     <ul style="list-style: none; margin-top: 15px;">
                         <li style="margin-bottom: 10px; color: #ccc;">Instalaciones Eléctricas</li>
-                        <li style="margin-bottom: 10px; color: #ccc;">Mantenimiento</li>
-                        <li style="margin-bottom: 10px; color: #ccc;">Energía Solar</li>
-                        <li style="margin-bottom: 10px; color: #ccc;">Automatización</li>
+                        <li style="margin-bottom: 10px; color: #ccc;">Instrumentación Industrial</li>
+                        <li style="margin-bottom: 10px; color: #ccc;">Automatización y Control</li>
+                        <li style="margin-bottom: 10px; color: #ccc;">Energías Alternativas</li>
+                        <li style="margin-bottom: 10px; color: #ccc;">Consultoría Técnica</li>
                     </ul>
                 </div>
             </div>
             
             <div class="copyright">
-                <p>&copy; 2023 ElectroPro - Servicios Eléctricos. Todos los derechos reservados.</p>
+                <p>&copy; 2023 KJC INSTRUMENT C.A. - RIF: J-29685693-1. Todos los derechos reservados.</p>
+                <p style="margin-top: 5px;">Dando un mundo de soluciones en instrumentación y electricidad</p>
             </div>
         </div>
     </footer>
@@ -738,7 +890,7 @@
         // Formulario de contacto (simulación)
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('¡Gracias por tu mensaje! Nos pondremos en contacto contigo en breve.');
+            alert('¡Gracias por contactar a KJC INSTRUMENT C.A.! Nos pondremos en contacto contigo en un máximo de 24 horas.');
             this.reset();
         });
         
@@ -753,7 +905,7 @@
                 const targetElement = document.querySelector(targetId);
                 if(targetElement) {
                     window.scrollTo({
-                        top: targetElement.offsetTop - 80,
+                        top: targetElement.offsetTop - 90,
                         behavior: 'smooth'
                     });
                 }
