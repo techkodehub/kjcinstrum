@@ -6,9 +6,6 @@
     <title>KJC INSTRUMENT C.A. | Soluciones Eléctricas e Instrumentación</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Mantengo todos los estilos anteriores iguales */
-        /* Solo cambiaré las rutas de las imágenes */
-        
         * {
             margin: 0;
             padding: 0;
@@ -62,9 +59,9 @@
         }
         
         .logo-img {
-            height: 60px;
+            height: 65px;
             width: auto;
-            max-width: 180px;
+            max-width: 200px;
             object-fit: contain;
         }
         
@@ -427,9 +424,9 @@
         }
         
         .footer-logo {
-            height: 50px;
+            height: 55px;
             width: auto;
-            max-width: 150px;
+            max-width: 180px;
             object-fit: contain;
         }
         
@@ -535,6 +532,11 @@
             .logo-text {
                 display: none;
             }
+            
+            .logo-img {
+                height: 55px;
+                max-width: 180px;
+            }
         }
         
         @media (max-width: 480px) {
@@ -549,6 +551,11 @@
             .stats {
                 grid-template-columns: 1fr;
                 gap: 15px;
+            }
+            
+            .logo-img {
+                height: 50px;
+                max-width: 160px;
             }
         }
     </style>
@@ -565,11 +572,8 @@
     <header>
         <div class="container nav-container">
             <div class="logo-container">
-                <!-- Logo de KJC INSTRUMENT C.A. -->
-                <!-- OPCIÓN 1: Si el logo está en /assets/images/ -->
-                <img src="assets/images/logo-kjc.jpg" alt="KJC INSTRUMENT C.A." class="logo-img">
-                <!-- OPCIÓN 2: Si el logo está en la raíz -->
-                <!-- <img src="logo-kjc.jpg" alt="KJC INSTRUMENT C.A." class="logo-img"> -->
+                <!-- Logo de KJC INSTRUMENT C.A. - RUTA ABSOLUTA CORRECTA -->
+                <img src="https://techkodehub.github.io/kjcinstrum/assets/images/logo-kjc.png" alt="KJC INSTRUMENT C.A." class="logo-img">
                 <div class="logo-text">
                     <div class="company-name">KJC INSTRUMENT C.A.</div>
                     <div class="company-tagline">Dando un mundo de soluciones</div>
@@ -835,10 +839,8 @@
             <div class="footer-content">
                 <div>
                     <div class="footer-logo-container">
-                        <!-- Logo en el footer - MISMA RUTA QUE ARRIBA -->
-                        <img src="assets/images/logo-kjc.jpg" alt="KJC INSTRUMENT C.A." class="footer-logo">
-                        <!-- Si el logo está en la raíz: -->
-                        <!-- <img src="logo-kjc.jpg" alt="KJC INSTRUMENT C.A." class="footer-logo"> -->
+                        <!-- Logo en el footer - MISMA RUTA ABSOLUTA -->
+                        <img src="https://techkodehub.github.io/kjcinstrum/assets/images/logo-kjc.png" alt="KJC INSTRUMENT C.A." class="footer-logo">
                         <div class="footer-tagline">Dando un mundo de soluciones</div>
                         <div class="rif-info" style="background-color: rgba(255,255,255,0.1);">RIF: J-29685693-1</div>
                     </div>
