@@ -6,6 +6,9 @@
     <title>KJC INSTRUMENT C.A. | Soluciones Eléctricas e Instrumentación</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* Mantengo todos los estilos anteriores iguales */
+        /* Solo cambiaré las rutas de las imágenes */
+        
         * {
             margin: 0;
             padding: 0;
@@ -62,6 +65,7 @@
             height: 60px;
             width: auto;
             max-width: 180px;
+            object-fit: contain;
         }
         
         .logo-text {
@@ -426,6 +430,7 @@
             height: 50px;
             width: auto;
             max-width: 150px;
+            object-fit: contain;
         }
         
         .footer-tagline {
@@ -561,7 +566,10 @@
         <div class="container nav-container">
             <div class="logo-container">
                 <!-- Logo de KJC INSTRUMENT C.A. -->
-                <img src="logo-kjc.jpg" alt="KJC INSTRUMENT C.A." class="logo-img">
+                <!-- OPCIÓN 1: Si el logo está en /assets/images/ -->
+                <img src="assets/images/logo-kjc.jpg" alt="KJC INSTRUMENT C.A." class="logo-img">
+                <!-- OPCIÓN 2: Si el logo está en la raíz -->
+                <!-- <img src="logo-kjc.jpg" alt="KJC INSTRUMENT C.A." class="logo-img"> -->
                 <div class="logo-text">
                     <div class="company-name">KJC INSTRUMENT C.A.</div>
                     <div class="company-tagline">Dando un mundo de soluciones</div>
@@ -827,8 +835,10 @@
             <div class="footer-content">
                 <div>
                     <div class="footer-logo-container">
-                        <!-- Logo en el footer -->
-                        <img src="logo-kjc.jpg" alt="KJC INSTRUMENT C.A." class="footer-logo">
+                        <!-- Logo en el footer - MISMA RUTA QUE ARRIBA -->
+                        <img src="assets/images/logo-kjc.jpg" alt="KJC INSTRUMENT C.A." class="footer-logo">
+                        <!-- Si el logo está en la raíz: -->
+                        <!-- <img src="logo-kjc.jpg" alt="KJC INSTRUMENT C.A." class="footer-logo"> -->
                         <div class="footer-tagline">Dando un mundo de soluciones</div>
                         <div class="rif-info" style="background-color: rgba(255,255,255,0.1);">RIF: J-29685693-1</div>
                     </div>
